@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Agencija.Controller">
+   <left>
+      <AnchorPane prefHeight="578.0" prefWidth="330.0" style="-fx-background-color: #0598ff;" BorderPane.alignment="CENTER">
+         <children>
+            <FontAwesomeIcon fill="WHITE" glyphName="PLANE" layoutX="88.0" layoutY="245.0" size="190" />
+            <Text fill="WHITE" layoutX="13.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRUJTE SE U NAŠU AGENCIJU">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="500.0" prefWidth="510.0" style="-fx-background-color: D7F2FA;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="name" layoutX="44.0" layoutY="183.0" promptText="Ime" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <Text fill="#0598ff" layoutX="160.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRACIJA">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <TextField fx:id="lname" layoutX="44.0" layoutY="235.0" promptText="Prezime" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="phone" layoutX="44.0" layoutY="290.0" promptText="Broj telefona" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="jmb" layoutX="44.0" layoutY="342.0" promptText="JMBG" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="acc" layoutX="262.0" layoutY="186.0" promptText="Broj racuna" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="user_reg" layoutX="262.0" layoutY="240.0" promptText="Korisnicko ime" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <PasswordField fx:id="pass_reg" layoutX="263.0" layoutY="294.0" promptText="Lozinka" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <PasswordField fx:id="pass_conf" layoutX="263.0" layoutY="342.0" promptText="Potvrda lozinke" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <Button fx:id="reg" layoutX="186.0" layoutY="424.0" mnemonicParsing="false" onAction="#register" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: #0598ff;" text="Registruj se" textFill="WHITE" />
+            <FontAwesomeIcon fill="#0598ff" glyphName="USER_PLUS" layoutX="208.0" layoutY="103.0" size="40" text="" />
+            <Hyperlink layoutX="141.0" layoutY="508.0" onAction="#switchToScene1" text="Prijavite se ako imate vec nalog" />
+            <Label fx:id="status_reg" alignment="CENTER" layoutX="17.0" layoutY="481.0" opacity="0.0" prefHeight="18.0" prefWidth="416.0" text="Popunite sva polja!" textAlignment="CENTER" textFill="RED" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

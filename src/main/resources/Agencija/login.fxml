@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Agencija.Controller">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: #0598ff;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="14.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DOBRODOŠLI U AGENCIJU">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Text>
+            <FontAwesomeIcon fill="WHITE" glyphName="PLANE" layoutX="92.0" layoutY="221.0" size="200" text="" />
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="554.0" prefWidth="399.0" style="-fx-background-color: D7F2FA;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="user" layoutX="114.0" layoutY="211.0" promptText="Korisnicko ime" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <PasswordField fx:id="pass" layoutX="114.0" layoutY="263.0" promptText="Lozinka" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <Button fx:id="log" layoutX="137.0" layoutY="340.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: #0598ff;" text="Prijavi se" textFill="WHITE" />
+            <Hyperlink layoutX="84.0" layoutY="441.0" onAction="#switchToScene2" text="Nemate nalog? Registrujte se ovdje" />
+            <Text fill="#0598ff" layoutX="134.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRIJAVA">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <FontAwesomeIcon fill="#0598ff" glyphName="USER" layoutX="89.0" layoutY="228.0" size="20" />
+            <FontAwesomeIcon fill="#0598ff" glyphName="KEY" layoutX="88.0" layoutY="280.0" size="20" text="" />
+            <FontAwesomeIcon fill="#0598ff" glyphName="USERS" layoutX="153.0" layoutY="108.0" size="40" text="" />
+            <Label fx:id="status" alignment="CENTER" layoutX="26.0" layoutY="392.0" opacity="0.0" prefHeight="38.0" prefWidth="298.0" text="Pogrešno koisničko ime ili lozinka!" textFill="RED" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

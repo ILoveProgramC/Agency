@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="612.0" prefWidth="843.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Agencija.Controller">
+   <children>
+      <AnchorPane layoutX="-4.0" prefHeight="48.0" prefWidth="310.0" style="-fx-background-color: #0598ff;">
+         <children>
+            <Hyperlink layoutX="88.0" layoutY="11.0" onAction="#lista_rezervacije_click" text="LISTA REZERVACIJA" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Hyperlink>
+         </children></AnchorPane>
+      <AnchorPane layoutX="-6.0" layoutY="558.0" prefHeight="54.0" prefWidth="850.0" style="-fx-background-color: #0598ff;">
+         <children>
+            <Hyperlink layoutX="762.0" layoutY="14.0" onAction="#switchToScene1" text="ODJAVA" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink layoutX="27.0" layoutY="14.0" onAction="#changePassWindow" text="Promjena lozinke" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-6.0" layoutY="48.0" prefHeight="511.0" prefWidth="850.0" style="-fx-background-color: D7F2FA;">
+         <children>
+            <FontAwesomeIcon glyphName="PLANE" layoutX="300.0" layoutY="385.0" opacity="0.11" size="300" strokeLineCap="ROUND" wrappingWidth="251.7141876220703" />
+            <TabPane fx:id="izletiTable" layoutY="-1.0" prefHeight="385.0" prefWidth="850.0" tabClosingPolicy="UNAVAILABLE" visible="false">
+               <tabs>
+                  <Tab fx:id="jednodnevna" text="Izlet">
+                     <content>
+                        <ListView fx:id="jednodnevna_lista" onMouseClicked="#rezervacija_izleta" prefHeight="350.0" prefWidth="845.0" />
+                     </content>
+                  </Tab>
+                  <Tab fx:id="visednevna" text="Putovanje">
+                     <content>
+                        <ListView fx:id="visednevna_lista" onMouseClicked="#rezervacija_putovanja" prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <TextField fx:id="destName" layoutX="24.0" layoutY="406.0" promptText="Naziv destinacije puta" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" visible="false" />
+            <ComboBox fx:id="stars" layoutX="427.0" layoutY="451.0" prefWidth="150.0" promptText="Broj zvjezdica " style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" visible="false" visibleRowCount="5" />
+            <DatePicker fx:id="departureDate" editable="false" layoutX="222.0" layoutY="406.0" prefHeight="28.0" prefWidth="150.0" promptText="Datum polaska" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" visible="false" />
+            <DatePicker fx:id="backDate" editable="false" layoutX="222.0" layoutY="451.0" prefHeight="28.0" prefWidth="150.0" promptText="Datum povratka" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" visible="false" />
+            <ComboBox fx:id="roomType" layoutX="427.0" layoutY="406.0" prefWidth="150.0" promptText="Vrsta sobe" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" visible="false" />
+            <ComboBox fx:id="transportName" layoutX="23.0" layoutY="451.0" prefWidth="150.0" promptText="Tip prijevoza" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" visible="false" />
+            <Button fx:id="filterIzlet" layoutX="604.0" layoutY="450.0" mnemonicParsing="false" onAction="#filterIzletPutovanje" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: #0598ff;" text="Filtriraj" textFill="WHITE" visible="false" />
+            <Button fx:id="filterUkloni" layoutX="724.0" layoutY="450.0" mnemonicParsing="false" onAction="#UkloniFilter" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: #0598ff;" text="Ukloni filter" textFill="WHITE" visible="false" />
+            <Spinner fx:id="cijenaBroj" editable="true" layoutX="633.0" layoutY="407.0" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" visible="false" />
+            <TabPane fx:id="rezervacijeTable" layoutX="-1.0" layoutY="1.0" prefHeight="386.0" prefWidth="851.0" tabClosingPolicy="UNAVAILABLE" visible="false">
+               <tabs>
+                  <Tab fx:id="aktivne" text="Aktivne">
+                     <content>
+                        <ListView fx:id="klijent_aktivne" prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </Tab>
+                  <Tab fx:id="protekle" text="Protekle">
+                     <content>
+                        <ListView fx:id="klijent_protekle" prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </Tab>
+                  <Tab fx:id="otkazane" text="Otkazane">
+                     <content>
+                        <ListView fx:id="klijent_otkazane" prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <Text fx:id="arange_potroseno_text" fill="#0598ff" layoutX="24.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ukupno potroseno na aranzmane: " visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="arange_potroseno" fill="#0598ff" layoutX="127.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="iznosDoplate_text" fill="#0598ff" layoutX="495.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Iznos doplate:" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="iznos_doplate" layoutX="491.0" layoutY="443.0" prefHeight="28.0" prefWidth="101.0" promptText="Unesite iznos" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" visible="false" />
+            <Text fx:id="doplata_text" fill="#0598ff" layoutX="307.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Potrebno doplatiti:" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="doplata" fill="#0598ff" layoutX="364.0" layoutY="452.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" visible="false">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Button fx:id="doplata_button" layoutX="625.0" layoutY="442.0" mnemonicParsing="false" onAction="#doplati" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: #0598ff;" text="Doplati" textFill="WHITE" visible="false" />
+            <Button fx:id="otkazi_button" layoutX="748.0" layoutY="442.0" mnemonicParsing="false" onAction="#otkazi" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: #0598ff;" text="Otkaži" textFill="WHITE" visible="false" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="533.0" layoutY="-6.0" prefHeight="54.0" prefWidth="310.0" style="-fx-background-color: #0598ff;">
+         <children>
+            <Text fx:id="client_user" fill="WHITE" layoutX="106.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="USERNAME" textAlignment="CENTER" wrappingWidth="151.19999999999982">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="client_name" fill="WHITE" layoutX="106.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IME PREZIME" textAlignment="CENTER" wrappingWidth="151.19999999999993">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="278.0" layoutY="33.0" size="20" wrappingWidth="16.199951171875" />
+            <Text fill="WHITE" layoutX="28.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balans:">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="balans" fill="WHITE" layoutX="2.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="100.8000366210938">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="307.0" layoutY="-6.0" prefHeight="54.0" prefWidth="5.0" style="-fx-background-color: C2E9F6;" />
+      <AnchorPane layoutX="528.0" layoutY="-4.0" prefHeight="54.0" prefWidth="5.0" style="-fx-background-color: C2E9F6;" />
+      <AnchorPane layoutX="310.0" prefHeight="48.0" prefWidth="219.0" style="-fx-background-color: #0598ff;">
+         <children>
+            <Hyperlink fx:id="reservation" layoutX="56.0" layoutY="10.0" onAction="#rezervacije_klik" prefHeight="28.0" prefWidth="107.0" text="REZERVACIJA" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
